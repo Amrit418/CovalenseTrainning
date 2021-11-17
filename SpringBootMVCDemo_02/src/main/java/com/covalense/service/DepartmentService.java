@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.covalense.beans.Employee;
 import com.covalense.beans.Department;
@@ -11,6 +12,7 @@ import com.covalense.exception.InvalidDepartmentIdException;
 import com.covalense.exception.invalidEmployeeIdException;
 import com.covalense.repo.DepartmentRepository;
 
+@Service
 public class DepartmentService {
 	@Autowired
 	DepartmentRepository departmentRepository;
