@@ -5,6 +5,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -14,7 +15,7 @@ public class Employee {
 	int id;
 	String name;
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-//@JoinColumn(name = "dept_id", nullable = false)
+    @JoinColumn(name = "dept_id", nullable = false)
 	Department department;
 
 	public Employee(int id, String name, Department department) {

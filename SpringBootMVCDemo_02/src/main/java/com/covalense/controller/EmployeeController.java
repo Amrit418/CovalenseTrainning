@@ -1,8 +1,5 @@
 package com.covalense.controller;
-
-import java.util.Iterator;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -31,7 +28,6 @@ public class EmployeeController {
 	modelAndView.addObject("departmentService", departmentService);
 	return modelAndView;
 	}
-
 	@RequestMapping(value = "regemp", method = RequestMethod.POST)
 	public ModelAndView saveEmployee(@ModelAttribute("employee") Employee emp) throws invalidEmployeeIdException
 	{
@@ -42,8 +38,6 @@ public class EmployeeController {
 	modelAndView.addObject("emps",employeeService.findAll());
 	return modelAndView;
 	}
-
-	
 	@RequestMapping(value = "getemps", method = RequestMethod.GET)
 	public ModelAndView findEmployeeAll() throws invalidEmployeeIdException
 	{
@@ -52,15 +46,15 @@ public class EmployeeController {
 	modelAndView.addObject("emps",emps);
 	return modelAndView;
 	}
-	
-
-	@RequestMapping(value = "editEmp", method = RequestMethod.GET)
-	public ModelAndView editEmp(@RequestParam int id) throws invalidEmployeeIdException {
-		Employee empToEdit = employeeService.findByID(id);
-		ModelAndView modelAndView = new ModelAndView("editEmp", "empToEdit", empToEdit);
-		return modelAndView;
+	@RequestMapping(value = "editEmp",method = RequestMethod.GET)
+	public ModelAndView editEmp(@RequestParam int id) throws invalidEmployeeIdException
+	{
+	Employee empTOEdit=employeeService.findByID(id);
+	ModelAndView modelAndView=new ModelAndView("editEmp", "empToEdit",empTOEdit);
+	modelAndView.addObject("departmentService", departmentService);
+	return modelAndView;
 	}
-     
+	
 	@RequestMapping(value = "updateEmp",method = RequestMethod.POST)
 	public ModelAndView updateEditEmp(@ModelAttribute("empToEdit") Employee employee)
 			throws invalidEmployeeIdException {
