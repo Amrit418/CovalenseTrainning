@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Home</title>
 <h1>Welcome to CovalenseDigital</h1>
-<a href="Employee">Employee</a><br><br>
+<a href="regemp">Employee</a><br><br>
 <a href="Department">Department</a>
 
 </head>
