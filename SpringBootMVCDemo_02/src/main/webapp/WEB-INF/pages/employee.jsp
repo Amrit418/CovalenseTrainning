@@ -4,13 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Home</title>
-<h1>Welcome to CovalenseDigital</h1>
-<a href="employee">Employee</a><br><br>
-<a href="department">Department</a>
-
+<title>Employee</title>
 </head>
 <body>
-
+<a href="getemps">Show Employee</a><br><br>
+<a href="regemp">Register Employee</a><br><br>
+<a href="/">Home</a>
 </body>
 </html>

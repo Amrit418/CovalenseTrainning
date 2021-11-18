@@ -19,6 +19,7 @@
 		<br>
 		<input type="submit" value="Register">		
 	</form:form>
+	<a href="/">Home</a>
 	
 </body>
 </html>

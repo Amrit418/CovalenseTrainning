@@ -9,5 +9,14 @@ public class HomeController {
 		public String home() {
 			return "home" ;
 		}
+		@RequestMapping("/employee")
+		public String Employee() {
+			return "employee";
+			
+		}
+		@RequestMapping("/department")
+		public String Department() {
+			return "department" ;
+		}
 		
 }

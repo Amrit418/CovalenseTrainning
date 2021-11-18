@@ -10,7 +10,7 @@
 </head>
 <body>
 	<h2>Department Details</h2>
-	<table border="3" bgcolor="#FFB6C1" style="text-align: center;">
+	<table border="3" bgcolor="#87CEEB" style="text-align: center;">
 		<tr>
 			<th>ID</th>
 			<th>Name</th>
@@ -38,7 +38,9 @@
 		}
 		%>
 	</table>
+	<br><br>
 	<a href="/">Home</a>
+	<a href="getDepts">ShowAllEmployee</a>
 
 </body>
 </html>
