@@ -7,7 +7,7 @@
 <title>Home</title>
 <h1>Welcome to CovalenseDigital</h1>
 <a href="regemp">Employee</a><br><br>
-<a href="Department">Department</a>
+<a href="regdept">Department</a>
 
 </head>
 <body>

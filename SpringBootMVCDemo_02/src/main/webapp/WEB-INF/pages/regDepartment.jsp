@@ -7,24 +7,15 @@
 	href="https://www.freepnglogos.com/uploads/youtube-play-red-logo-png-transparent-background-6.png">
 
 <meta charset="ISO-8859-1">
-<title>RegEmployee</title>
+<title>Department Registration</title>
 </head>
 <body>
-	<h2>Employee Registration</h2>
-	<form:form action="regemp" method="post" modelAttribute="employee">
+	<h2>Department Registration</h2>
+	<form:form action="regdept" method="post" modelAttribute="department">
 		
 		<form:label path="name">Name</form:label>
 		<form:input path="name" />
 		<br>
-		<br>
-		
-		<label for="Department">Choose Department</label>
-		
-		<select name="Department" id="dept">
-		<option value="20">20</option>
-		<option value="20">30</option>
-		</select>
-       <br>
 		<br>
 		<input type="submit" value="Register">		
 	</form:form>

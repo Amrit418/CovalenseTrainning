@@ -14,8 +14,9 @@ import javax.persistence.OneToMany;
 public class Department {
 	
 	@Id
-	int id;
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	
+	int id;
 	String name; @OneToMany(mappedBy = "department",fetch = FetchType.EAGER)
 	public List<Employee>employees= new ArrayList<>(); public Department() {
 	} public Department(int id, String name) {
