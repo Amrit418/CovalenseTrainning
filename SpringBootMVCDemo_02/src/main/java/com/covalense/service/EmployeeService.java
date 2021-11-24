@@ -1,57 +1,79 @@
+
 package com.covalense.service;
 
 import java.util.List;
 import java.util.Optional;
-
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.covalense.beans.Employee;
-import com.covalense.exception.invalidEmployeeIdException;
+import com.covalense.exception.InvalidDepartmentIdException;
+import com.covalense.exception.InvalidEmployeeIdException;
 import com.covalense.repo.EmployeeRepository;
 
 @Service
 public class EmployeeService {
+	Logger logger = Logger.getLogger(EmployeeService.class);
 	@Autowired
 	EmployeeRepository employeeRepository;
 
 	public List<Employee> findAll() {
-
+		logger.info("finding all employees");
 		return employeeRepository.findAll();
 	}
 
-	public Employee findByID(int id) throws invalidEmployeeIdException {
+	public Employee findById(int id) throws InvalidEmployeeIdException {
+		logger.info("finding employee with id: " + id);
 		Optional<Employee> empOptional = employeeRepository.findById(id);
+		InvalidEmployeeIdException invalidEmployeeIdException = new InvalidEmployeeIdException("Employee id not found");
+		logger.warn(invalidEmployeeIdException);
 		if (!empOptional.isPresent()) {
-			throw new invalidEmployeeIdException("Employee Id " + id + " is not exits in repository ");
+			throw new InvalidEmployeeIdException("Employee Id " + id + " not existing in repository");
 		}
-
+		Employee employee = empOptional.get();
+		logger.info("employee found with id " + id + "is" + employee.getName() + " " + employee.getDepartment());
 		return empOptional.get();
-
 	}
 
 	public Employee save(Employee employee) {
+		logger.info("inserting a employee");
+		InvalidEmployeeIdException invalidemployeeIdException = new InvalidEmployeeIdException("Employee id not found");
+		logger.warn(invalidemployeeIdException);
 		return employeeRepository.save(employee);
 	}
 
-	public Employee update(Employee employee) throws invalidEmployeeIdException {
+	public Employee update(Employee employee) throws InvalidEmployeeIdException {
+		logger.info("updating employee ");
 		Optional<Employee> empOptional = employeeRepository.findById(employee.getId());
+		InvalidEmployeeIdException invalidEmployeeIdException = new InvalidEmployeeIdException("Person id not found");
+		logger.warn(invalidEmployeeIdException);
 		if (!empOptional.isPresent()) {
-			throw new invalidEmployeeIdException("Employee Id " + employee.getId() + " is not exits in repository ");
+			throw new InvalidEmployeeIdException("Employee Id" + employee.getId() + "not existing in reposiotory");
 		}
+		logger.info("employee updated " + "is" + employee.getName() + " " + employee.getDepartment());
 		return employeeRepository.save(employee);
-
 	}
 
-	public Employee delete(int id) throws invalidEmployeeIdException {
+	public Employee delete(int id) throws InvalidEmployeeIdException {
+		logger.info("deleting employee with id " + id);
 		Optional<Employee> empOptional = employeeRepository.findById(id);
+		InvalidEmployeeIdException invalidEmployeeIdException = new InvalidEmployeeIdException("Person id not found");
+		logger.warn(invalidEmployeeIdException);
 		if (!empOptional.isPresent()) {
-			throw new invalidEmployeeIdException("Employee Id " + id + " is not exits in repository ");
+			throw new InvalidEmployeeIdException("Employee Id " + id + "not existing in repository");
 		}
 		Employee employee = empOptional.get();
 		employeeRepository.deleteById(id);
+		logger.info(
+				"employee deleted " + "is with id " + id + " " + employee.getName() + " " + employee.getDepartment());
 		return employee;
-
 	}
 
+	public List<Employee> findAllByDeptno(int deptno) throws InvalidDepartmentIdException {
+		List<Employee> employee = employeeRepository.findAllByDeptno(deptno);
+		if (employee.isEmpty()) {
+			throw new InvalidDepartmentIdException("Department Id " + deptno + "not existing in repository");
+		}
+		return employee;
+	}
 }

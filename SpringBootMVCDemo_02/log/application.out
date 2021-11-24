@@ -1,0 +1,15 @@
+24-11-2021 15:19:01 - INFO com.covalense.controller.EmployeeController:37 finding all employees 
+24-11-2021 15:19:01 - INFO com.covalense.service.EmployeeService:21 finding all employees 
+24-11-2021 15:19:16 - INFO com.covalense.controller.DepartmentController:37 finding all departments 
+24-11-2021 15:19:16 - INFO com.covalense.service.DepartmentService:20 finding all departments 
+24-11-2021 15:19:38 - INFO com.covalense.controller.EmployeeController:37 finding all employees 
+24-11-2021 15:19:38 - INFO com.covalense.service.EmployeeService:21 finding all employees 
+24-11-2021 15:24:17 - INFO com.covalense.controller.EmployeeController:29 finding a employee with id 4 
+24-11-2021 15:24:17 - INFO com.covalense.service.EmployeeService:26 finding employee with id: 4 
+24-11-2021 15:24:17 - WARN com.covalense.service.EmployeeService:29 com.covalense.exception.InvalidEmployeeIdException: Employee id not found 
+24-11-2021 15:24:17 - INFO com.covalense.service.EmployeeService:34 employee found with id 4isNagraj Department [id=1, name=Java] 
+24-11-2021 15:24:17 - INFO com.covalense.controller.EmployeeController:31 employee found with id 4 isNagraj 
+24-11-2021 15:24:23 - INFO com.covalense.controller.EmployeeController:37 finding all employees 
+24-11-2021 15:24:23 - INFO com.covalense.service.EmployeeService:21 finding all employees 
+24-11-2021 15:24:39 - INFO com.covalense.controller.EmployeeController:37 finding all employees 
+24-11-2021 15:24:39 - INFO com.covalense.service.EmployeeService:21 finding all employees 

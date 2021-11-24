@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Employee {
 	@Id
@@ -16,6 +18,7 @@ public class Employee {
 	String name;
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "dept_id", nullable = false)
+	@JsonIgnore
 	Department department;
 
 	public Employee(int id, String name, Department department) {

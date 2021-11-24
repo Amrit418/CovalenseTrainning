@@ -1,23 +1,23 @@
 package com.covalense.exception;
 
-public class invalidEmployeeIdException extends Exception {
+public class InvalidEmployeeIdException extends Exception {
 
-	public invalidEmployeeIdException() {
+	public InvalidEmployeeIdException() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public invalidEmployeeIdException(String message, Throwable cause) {
+	public InvalidEmployeeIdException(String message, Throwable cause) {
 		super(message, cause);
 		// TODO Auto-generated constructor stub
 	}
 
-	public invalidEmployeeIdException(String message) {
+	public InvalidEmployeeIdException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}
 
-	public invalidEmployeeIdException(Throwable cause) {
+	public InvalidEmployeeIdException(Throwable cause) {
 		super(cause);
 		// TODO Auto-generated constructor stub
 	}

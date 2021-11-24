@@ -1,4 +1,3 @@
-[22:55] Nagraj Kanti
 <%@page import="com.covalense.beans.Department"%>
 <%@page import="java.util.List"%>
 <%@page import="com.covalense.service.DepartmentService"%>
