@@ -17,14 +17,29 @@ import com.covalense.beans.Employee;
 import com.covalense.exception.InvalidEmployeeIdException;
 import com.covalense.service.EmployeeService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
+@Api(value = "API to Perform operations on Employee", description = "This API provides capability to perform differnt CRUD Operation on Employee Repository", produces = "application/xml")
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
+
 	static Logger logger = Logger.getLogger(EmployeeController.class);
 	@Autowired
 	EmployeeService employeeService;
 
+	@ApiOperation(value = "Search a single Employee based on the ID given", response = Employee.class, produces = "application/xml")
 	@GetMapping("/{id}")
+	@ApiResponses(value = {
+			
+			@ApiResponse(code = 200,message = "Successfully retrived list of Employee"),
+			@ApiResponse(code = 401,message = "Unauthrizedd access for Employee"),
+			@ApiResponse(code = 403,message = "Forbidden access for Employee"),
+			@ApiResponse(code = 404,message = "Page not found in  Employee")
+	})
 	public Employee find(@PathVariable int id) throws InvalidEmployeeIdException {
 		logger.info("finding a employee with id " + id);
 		Employee employee = employeeService.findById(id);
