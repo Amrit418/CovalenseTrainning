@@ -10,13 +10,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 public class Department {
-	
+	@ApiModelProperty(notes = "auto genterated department ID by DB ")
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	
 	int id;
+	@ApiModelProperty(notes = "Departmetn name")
 	String name; @OneToMany(mappedBy = "department",fetch = FetchType.EAGER)
 	public List<Employee>employees= new ArrayList<>();
 	public Department() {

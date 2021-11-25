@@ -10,11 +10,15 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 public class Employee {
+	@ApiModelProperty(notes = "Auto generated Employee ID by DB")
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int id;
+	  @ApiModelProperty(notes = "Employee name")
 	String name;
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "dept_id", nullable = false)
